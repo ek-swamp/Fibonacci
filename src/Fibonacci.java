@@ -3,14 +3,11 @@ public class Fibonacci {
         if (n < 0) {
             throw new IllegalArgumentException();
         }
-        if (n <= 1) {
-            return n;
-        }
         else {
-            int sum = 1;
-            int prev = 0;
+            int sum = 0;
+            int prev = 1;
 
-            for (int i = 2; i <= n; i++) {
+            for (int i = 1; i <= n; i++) {
                 int tmp = sum;
                 sum += prev;
                 prev = tmp;
