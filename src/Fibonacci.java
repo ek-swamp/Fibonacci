@@ -3,11 +3,17 @@ public class Fibonacci {
         if (n < 0) {
             throw new IllegalArgumentException();
         }
-        if (n <= 1) {
-            return n;
+        else {
+            return F_(n, 1, 0);
+        }
+    }
+
+    private static int F_(int n, int prev, int sum) {
+        if (n == 0) {
+            return sum;
         }
         else {
-            return F(n - 1) + F(n - 2);
+            return F_(n - 1, sum, sum + prev  );
         }
     }
 }
