@@ -7,7 +7,16 @@ public class Fibonacci {
             return n;
         }
         else {
-            return F(n - 1) + F(n - 2);
+            int sum = 1;
+            int prev = 0;
+
+            for (int i = 2; i <= n; i++) {
+                int tmp = sum;
+                sum += prev;
+                prev = tmp;
+            }
+
+            return sum;
         }
     }
 }
